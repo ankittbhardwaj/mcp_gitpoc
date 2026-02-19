@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World • React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      }
+      body {
+        margin: 0;
+        color: white;
+        background:
+          radial-gradient(1200px 700px at 10% 10%, rgba(124, 58, 237, 0.35), transparent 55%),
+          radial-gradient(900px 600px at 90% 20%, rgba(16, 185, 129, 0.22), transparent 55%),
+          linear-gradient(180deg, #0b1020 0%, #070a13 100%);
+      }
+      .page {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 32px 16px;
+      }
+      .card {
+        width: min(720px, 100%);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 20px 60px rgba(0, 0, 0, 0.45);
+      }
+      .kicker {
+        margin: 0 0 10px 0;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      h1 { margin: 0 0 10px 0; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; }
+      .sub { margin: 0 0 22px 0; color: rgba(255, 255, 255, 0.75); }
+      .row { display: flex; gap: 12px; flex-wrap: wrap; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding: 0 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.08);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .btn:hover { background: rgba(255, 255, 255, 0.14); }
+      .btn.secondary { background: rgba(124, 58, 237, 0.22); border-color: rgba(124, 58, 237, 0.35); }
+      .btn.secondary:hover { background: rgba(124, 58, 237, 0.3); }
+      code {
+        font-family: ui-monospace, monospace;
+        font-size: 0.95em;
+        padding: 0.1em 0.35em;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { createElement: h } = React;
+      function App() {
+        return h('main', { className: 'page' },
+          h('section', { className: 'card' },
+            h('p', { className: 'kicker' }, 'React + HTML + CSS'),
+            h('h1', null, 'Hello, World.'),
+            h('p', { className: 'sub' }, 'No build step — open this file directly in your browser.'),
+            h('div', { className: 'row' },
+              h('a', { className: 'btn', href: 'https://react.dev', target: '_blank', rel: 'noreferrer' }, 'React docs'),
+              h('a', { className: 'btn secondary', href: 'https://vite.dev', target: '_blank', rel: 'noreferrer' }, 'Vite docs')
+            )
+          )
+        );
+      }
+      ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+    </script>
+  </body>
+</html>
